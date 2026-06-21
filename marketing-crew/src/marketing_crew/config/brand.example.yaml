@@ -1,0 +1,12 @@
+# Brand inputs for the crew. Copy this file to `brand.local.yaml` and fill in
+# your real details. `brand.local.yaml` is git-ignored, so your positioning and
+# strategy never get committed. If `brand.local.yaml` is absent, these example
+# values are used instead.
+brand: ExampleBrand
+product: natural cosmetics
+audience: eco-conscious shoppers aged 25-45
+market: France
+brand_context: >
+  A direct-to-consumer natural cosmetics brand. Describe here your product
+  range, sourcing story, positioning (premium / value), visual identity,
+  tone of voice, and the differentiators that competitors cannot copy.

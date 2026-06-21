@@ -1,0 +1,7 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+outputs/
+# Real, private brand details — never commit
+src/marketing_crew/config/brand.local.yaml

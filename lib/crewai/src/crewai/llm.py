@@ -2286,6 +2286,15 @@ class LLM(BaseLLM):
                     "Invalid message format. Each message must be a dict with 'role' and 'content' keys"
                 )
 
+        # Strip the provider-agnostic cache-breakpoint marker. Providers that
+        # consume it (e.g. Anthropic) read it in their own override before
+        # delegating here; every other provider (Groq, OpenAI, Gemini, ...)
+        # would otherwise forward the unsupported key and be rejected.
+        from crewai.llms.cache import strip_cache_breakpoint
+
+        for msg in messages:
+            strip_cache_breakpoint(msg)
+
         if "o1" in self.model.lower():
             formatted_messages = []
             for msg in messages:

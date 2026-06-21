@@ -1,0 +1,27 @@
+research_task:
+  description: >
+    Analyse le marché pour {product} de la marque {brand}, destiné à {audience}
+    sur le marché {market}.
+    Contexte de marque : {brand_context}
+    Identifie :
+    - Les 3 principaux déclencheurs d'achat émotionnels.
+    - Les 3 objections / freins les plus courants.
+    - 2 angles concurrents typiques à éviter.
+  expected_output: >
+    Une synthèse structurée en français : déclencheurs, objections, et angles à
+    éviter, sous forme de listes à puces claires et actionnables.
+  agent: market_researcher
+  output_file: outputs/research.md
+
+ad_angles_task:
+  description: >
+    À partir de la recherche, rédige 6 accroches publicitaires courtes en
+    français pour {brand}, 2 par levier émotionnel :
+    (1) bénéfice produit, (2) valeurs / sourcing, (3) expérience / sensorialité.
+    Chaque accroche doit faire moins de 15 mots et rester fidèle au contexte
+    de marque.
+  expected_output: >
+    6 accroches numérotées, regroupées par levier émotionnel, formatées en
+    markdown sans blocs de code.
+  agent: ad_strategist
+  output_file: outputs/ad_angles.md

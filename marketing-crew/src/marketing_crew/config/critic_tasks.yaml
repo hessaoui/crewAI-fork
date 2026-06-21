@@ -1,0 +1,25 @@
+critique_ad_angles:
+  description: >
+    Brand positioning to judge against:
+    {brand_context}
+
+    Score the ad hooks below, which were read from {ad_angles_path}.
+
+    HOOKS:
+    {ad_hooks}
+
+    For EACH hook, score 1-10 on:
+    - brand_fit: does it match the brand's stated positioning and tone
+      above vs. generic category language?
+    - hook_strength: would this stop a scroll in the first 3 words?
+    - compliance_risk: does it risk Meta/TikTok rejection (unproven
+      product/health claims, exaggerated before/after language)?
+      10 = no risk, 1 = high risk.
+    Give a one-line reason per score. Do not be encouraging by default —
+    a generic or weak hook should score low.
+  expected_output: >
+    A markdown table: hook | brand_fit (1-10) | hook_strength (1-10) |
+    compliance_risk (1-10) | total | one-line verdict.
+    Sorted by total score descending.
+  agent: ad_critic
+  output_file: outputs/critic_scores.md
